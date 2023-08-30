@@ -1,0 +1,91 @@
+{
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.type": "newLineEachExpressionAfterCountLimitExceptIfOnlyOne",
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 100,
+    "importSorter.importStringConfiguration.trailingComma": "multiLine",
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
+    "importSorter.sortConfiguration.customOrderingRules.rules": [
+      {
+        "regex": "^@angular|^@ng",
+        "orderLevel": 20,
+        "numberOfEmptyLinesAfterGroup": 1,
+        "type": "path"
+      },
+      {
+        "regex": "^[a-z]",
+        "orderLevel": 30,
+        "numberOfEmptyLinesAfterGroup": 1,
+        "type": "path"
+      },
+      {
+        "regex": "^[@]",
+        "orderLevel": 40,
+        "numberOfEmptyLinesAfterGroup": 1
+      },
+      {
+        "regex": "^[.]",
+        "orderLevel": 50,
+        "numberOfEmptyLinesAfterGroup": 0
+      }
+    ],
+    "importSorter.sortConfiguration.removeUnusedDefaultImports": true,
+    "importSorter.sortConfiguration.removeUnusedImports": true,
+    "importSorter.importStringConfiguration.tabSize": 2,
+    "npm.enableRunFromFolder": false,
+    "npm.packageManager": "auto",
+    "eslint.validate": [
+      "javascript",
+      "typescript",
+      "html"
+    ],
+    "eslint.options": {
+      "extensions": [
+        ".js",
+        ".ts",
+        "html"
+      ]
+    },
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+    },
+    "todo-tree.general.showActivityBarBadge": true,
+    "todo-tree.general.tags": ["NOTE", "TODO", "FIXME", "MARK", "[ ]", "[x]"],
+    "todo-tree.highlights.defaultHighlight": {
+      "type": "tag",
+      "fontWeight": "bold",
+      "foreground": "#000000",
+      "opacity": 90
+    },
+    "todo-tree.highlights.customHighlight": {
+      "NOTE": {
+        "background": "#FFA500",
+        "iconColour": "#FFA500",
+        "icon": "file"
+      },
+      "TODO": {
+        "background": "#FFD703",
+        "iconColour": "#FFD703",
+        "icon": "tasklist"
+      },
+      "FIXME": {
+        "background": "#FF01FF",
+        "iconColour": "#FF01FF",
+        "icon": "bug"
+      },
+      "MARK": {
+        "background": "#157EFB",
+        "iconColour": "#157EFB",
+        "icon": "tag"
+      },
+      "[ ]": {
+        "background": "#ff000080",
+        "iconColour": "#ff000080",
+        "icon": "square"
+      },
+      "[x]": {
+        "background": "#00ff0080",
+        "iconColour": "#00ff0080",
+        "icon": "square-fill"
+      }
+    },
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  }
