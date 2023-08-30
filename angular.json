@@ -27,7 +27,8 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/assets/logo.png",
-              "src/assets"
+              "src/assets",
+              "src/assets/netlify.toml"
             ],
             "styles": [
               "src/styles.scss"
