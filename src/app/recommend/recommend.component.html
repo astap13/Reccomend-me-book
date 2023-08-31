@@ -1,34 +1,37 @@
-
 <div class="container">
-    <button (click)="getRandomBook()" class="btn btn-primary">
-  Next Book<cds-icon *ngIf="loading$ | async" shape="cog"></cds-icon>
-</button>
-<div class="clr-col-lg-4 clr-col-sm-6 clr-col-12">
-  <ng-container *ngIf="randomBook$ | async as randomBook">
-    <div class="clr-col-lg-6 clr-col-12">
-      <a [href]="randomBook.volumeInfo.previewLink" class="card clickable">
-        <div class="card-img">
-          <img [src]="randomBook.volumeInfo.imageLinks.thumbnail" alt="Book Cover" />
+  
+  <div class="clr-col-lg-4 clr-col-sm-6 clr-col-12">
+    <ng-container *ngIf="randomBook$ | async as randomBook">
+      <div class="img-container">
+        <div class="clr-col-lg-6 clr-col-12">
+          <a [href]="randomBook.volumeInfo.previewLink" class="card clickable">
+            <div class="card-img">
+              <img [src]="randomBook.volumeInfo.imageLinks.thumbnail" alt="Book Cover" />
+            </div>
+          </a>
         </div>
-      </a>
-    </div>
-    <div class="card">
-      <h3 class="card-header">{{ randomBook.volumeInfo.title }}</h3>
-      <div class="card-block">
-        <p>{{ randomBook.volumeInfo.description }}</p>
+        <div class="card-block">
+          <ul class="list">
+            <li>Author: {{ randomBook.volumeInfo.authors.join(', ') }}</li>
+            <li>Published: {{ randomBook.volumeInfo.publishedDate }}</li>
+            <li>Categories: {{ randomBook.volumeInfo.categories.join(', ') }}</li>
+            <li>Rating: {{ randomBook.volumeInfo.averageRating || 'N/A' }}</li>
+          </ul>
+          <div class="card-footer">
+            <a [href]="randomBook.volumeInfo.infoLink" class="btn btn-primary">Learn More</a>
+          </div>
+        </div>
       </div>
-      <div class="card-block">
-        <ul class="list">
-          <li *ngFor="let author of randomBook.volumeInfo.authors">{{ author }}</li>
-          <li>Published: {{ randomBook.volumeInfo.publishedDate }}</li>
-          <li>Categories: {{ randomBook.volumeInfo.categories.join(', ') }}</li>
-          <li>Rating: {{ randomBook.volumeInfo.averageRating || 'N/A' }}</li>
-        </ul>
+
+      <div class="card">
+        <h3 class="card-header">{{ randomBook.volumeInfo.title }}</h3>
+        <div class="card-block">
+          <p>{{ randomBook.volumeInfo.description }}</p>
+        </div>
       </div>
-      <div class="card-footer">
-        <a [href]="randomBook.volumeInfo.infoLink" class="btn btn-primary">Learn More</a>
-      </div>
-    </div>
-  </ng-container>
-</div>
+    </ng-container>
+  </div>
+  <button (click)="getRandomBook()" class="btn btn-primary fixed-btn">
+    Next Book<cds-icon *ngIf="loading$ | async" shape="cog"></cds-icon>
+  </button>
 </div>
