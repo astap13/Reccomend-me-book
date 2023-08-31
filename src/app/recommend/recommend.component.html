@@ -1,5 +1,7 @@
 <div class="container">
-  
+  <span *ngIf="loading$ | async" class="spinner">
+    Loading...
+</span>
   <div class="clr-col-lg-4 clr-col-sm-6 clr-col-12">
     <ng-container *ngIf="randomBook$ | async as randomBook">
       <div class="img-container">
