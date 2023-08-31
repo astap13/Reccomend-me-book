@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ClarityModule } from '@clr/angular';
 
@@ -11,7 +12,13 @@ import { RecommendComponent } from './recommend/recommend.component';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent, RecommendComponent],
-  imports: [BrowserModule, AppRoutingModule, ClarityModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ClarityModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
 
   bootstrap: [AppComponent],

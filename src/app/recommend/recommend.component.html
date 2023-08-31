@@ -1,18 +1,16 @@
 <div class="container">
-  <span *ngIf="loading$ | async" class="spinner">
-    Loading...
-</span>
-  <div class="clr-col-lg-4 clr-col-sm-6 clr-col-12">
-    <ng-container *ngIf="randomBook$ | async as randomBook">
-      <div class="img-container">
-        <div class="clr-col-lg-6 clr-col-12">
+  <span [@fadeIn] *ngIf="loading$ | async" class="spinner"> Loading... </span>
+  <div [@fadeIn] class="clr-col-lg-4 clr-col-sm-6 clr-col-12">
+    <ng-container [@fadeIn] *ngIf="randomBook$ | async as randomBook">
+      <div [@fadeIn] class="img-container">
+        <div [@fadeIn] class="clr-col-lg-6 clr-col-12">
           <a [href]="randomBook.volumeInfo.previewLink" class="card clickable">
             <div class="card-img">
               <img [src]="randomBook.volumeInfo.imageLinks.thumbnail" alt="Book Cover" />
             </div>
           </a>
         </div>
-        <div class="card-block">
+        <div [@fadeIn] class="card-block">
           <ul class="list">
             <li>Author: {{ randomBook.volumeInfo.authors.join(', ') }}</li>
             <li>Published: {{ randomBook.volumeInfo.publishedDate }}</li>
@@ -24,7 +22,6 @@
           </div>
         </div>
       </div>
-
       <div class="card">
         <h3 class="card-header">{{ randomBook.volumeInfo.title }}</h3>
         <div class="card-block">

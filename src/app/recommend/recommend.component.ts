@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
+import { fadeInAnimation } from '../animations/fade-in.animation';
 import { GoogleBooksVolume } from '../models';
 import { RecommendationService } from '../recommend/recommend.service';
 
@@ -9,6 +10,7 @@ import { RecommendationService } from '../recommend/recommend.service';
   selector: 'app-recommend',
   templateUrl: './recommend.component.html',
   styleUrls: ['./recommend.component.scss'],
+  animations: [fadeInAnimation],
 })
 export class RecommendComponent implements OnInit {
   randomBook$!: Observable<GoogleBooksVolume>;
