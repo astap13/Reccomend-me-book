@@ -25,6 +25,10 @@
 @media (max-width: 991px) {
     .img-container {
       flex-direction: column;
+      .clr-col-lg-6, .clr-col-12 {
+        height: 150px;
+        width: 100px;
+      }
     }
   }
 

@@ -31,7 +31,6 @@ export class RecommendationService {
         if (response.items && response.items.length > 0) {
           const randomBook = response.items[0];
           if (!randomBook.volumeInfo.description) {
-            // Если описания нет, делаем дополнительный запрос
             return this.getRandomBook();
           }
           this.loading$.next(false);
