@@ -24,7 +24,7 @@
 
 @media (max-width: 991px) {
     .container {
-        width: 100%; 
+        max-width: 991px; 
       }
     .img-container {
       flex-direction: column;
