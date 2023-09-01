@@ -24,8 +24,8 @@
 
 @media (max-width: 991px) {
     .container {
-        max-width: 100%;
-    }
+        width: 100%; 
+      }
     .img-container {
       flex-direction: column;
       .clr-col-lg-6, .clr-col-12 {
