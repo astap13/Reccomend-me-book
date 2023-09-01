@@ -5,4 +5,11 @@
     left: 0;
     right: 0;
     z-index: 1000;
-  }
+
+    .branding {
+        img {
+            height: 30px;
+        }
+        align-items: center;
+    }
+}
