@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, finalize, switchMap } from 'rxjs/operators';
 
-import { GoogleBooksVolume } from '../models';
+import { GoogleBooksVolume } from '../../models';
 
 @Injectable({
   providedIn: 'root',

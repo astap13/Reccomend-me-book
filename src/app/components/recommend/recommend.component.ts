@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 
-import { fadeInAnimation } from '../animations/fade-in.animation';
-import { GoogleBooksVolume } from '../models';
+import { fadeInAnimation } from '../../animations/fade-in.animation';
+import { GoogleBooksVolume } from '../../models';
 import { RecommendationService } from './recommend.service';
 
 @Component({
