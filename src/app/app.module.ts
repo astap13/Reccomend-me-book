@@ -10,9 +10,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { RecommendComponent } from './recommend/recommend.component';
+import { BookshelfComponent } from './bookshelf/bookshelf.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, RecommendComponent],
+  declarations: [AppComponent, HeaderComponent, RecommendComponent, BookshelfComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

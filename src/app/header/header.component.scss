@@ -6,6 +6,10 @@
     right: 0;
     z-index: 1000;
 
+    .header-actions{
+        align-items: center;
+    }
+
     .branding {
         img {
             height: 30px;

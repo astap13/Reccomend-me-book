@@ -3,13 +3,26 @@
     <img style="filter: invert()" src="../../assets/logo.png" alt="" />
   </div>
   <div class="header-nav">
-    <a href="javascript://" class="active nav-link nav-text">Recommendacion</a>
-    <a href="javascript://" class="nav-link nav-text">My Bookshelf</a>
-</div>
+    <a routerLink="/recommendation" class="active nav-link nav-text">Recommendation</a>
+    <a routerLink="bookshelf" class="nav-link nav-text">My Bookshelf</a>
+  </div>
   <div class="header-actions">
-    <a href="javascript://" class="nav-link nav-icon-text">
-      <cds-icon shape="user"></cds-icon>
-      <span class="nav-text">username</span>
-    </a>
+    <button
+      [routerLink]="['/login']"
+      [routerLinkActive]="['active']"
+      *ngIf="!isLoggedIn"
+      class="btn btn-success-outline"
+    >
+      Sign In
+    </button>
+    <button
+      [routerLink]="['/register']"
+      [routerLinkActive]="['active']"
+      *ngIf="!isLoggedIn"
+      class="btn btn-success-outline"
+    >
+      Sign Up
+    </button>
+    <button (click)="logout()" *ngIf="isLoggedIn" class="btn btn-warning-outline">Logout</button>
   </div>
 </header>

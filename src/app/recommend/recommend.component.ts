@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 
 import { fadeInAnimation } from '../animations/fade-in.animation';
 import { GoogleBooksVolume } from '../models';
-import { RecommendationService } from '../recommend/recommend.service';
+import { RecommendationService } from './recommend.service';
 
 @Component({
   selector: 'app-recommend',

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeaderComponent } from './header.component';
+import { BookshelfComponent } from './bookshelf.component';
 
-describe('HeaderComponent', () => {
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+describe('BookshelfComponent', () => {
+  let component: BookshelfComponent;
+  let fixture: ComponentFixture<BookshelfComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      declarations: [BookshelfComponent]
     });
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(BookshelfComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
