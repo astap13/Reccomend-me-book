@@ -10,8 +10,8 @@ import { LoginGuard } from './guards/login.guard';
 const routes: Routes = [
   // { path: '', redirectTo: '/login', pathMatch: 'full', canActivate: [LoginGuard] },
   { path: 'login', component: SignInComponent, canActivate: [LoginGuard] },
-  { path: 'recommendation', component: RecommendComponent },
-  { path: 'bookshelf', component: BookshelfComponent, canActivate: [LoginGuard] },
+  { path: 'book', component: RecommendComponent },
+  { path: 'bookshelf', component: BookshelfComponent },
   { path: 'register', component: SignUpComponent, canActivate: [LoginGuard] },
   // { path: '**', redirectTo: '/login', pathMatch: 'full', canActivate: [LoginGuard] },
 ];

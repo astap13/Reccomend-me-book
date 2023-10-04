@@ -31,6 +31,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
 

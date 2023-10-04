@@ -12,14 +12,17 @@
         </div>
         <div [@fadeIn] class="card-block">
           <ul class="list">
-            <li>Author: {{ randomBook.volumeInfo.authors.join(', ') }}</li>
+            <li>Author: {{ randomBook.volumeInfo.authors }}</li>
             <li>Published: {{ randomBook.volumeInfo.publishedDate }}</li>
-            <li>Categories: {{ randomBook.volumeInfo.categories.join(', ') }}</li>
+            <li>Categories: {{ randomBook.volumeInfo.categories }}</li>
             <li>Rating: {{ randomBook.volumeInfo.averageRating || 'N/A' }}</li>
           </ul>
           <div class="card-footer">
             <a [href]="randomBook.volumeInfo.infoLink" class="btn btn-primary">Learn More</a>
           </div>
+          <button (click)="saveBook(randomBook.id)" class="btn btn-primary">
+            Save<cds-icon *ngIf="loading$ | async" shape="cog"></cds-icon>
+          </button>
         </div>
       </div>
       <div class="card">

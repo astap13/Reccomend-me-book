@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
+import { BookService } from 'src/app/services/book-service/book-save.service';
 
 import { fadeInAnimation } from '../../animations/fade-in.animation';
 import { GoogleBooksVolume } from '../../models';
@@ -17,7 +18,10 @@ export class RecommendComponent implements OnInit {
 
   loading$!: Observable<boolean>;
 
-  constructor(private recommendationService: RecommendationService) {}
+  constructor(
+    private recommendationService: RecommendationService,
+    private bookService: BookService,
+  ) {}
 
   ngOnInit(): void {
     this.fetchRandomBook();
@@ -30,5 +34,20 @@ export class RecommendComponent implements OnInit {
 
   getRandomBook() {
     this.fetchRandomBook();
+  }
+
+  saveBook(bookId: string) {
+    console.log(bookId);
+    this.bookService.saveBook(bookId).subscribe(
+      (response) => {
+        console.log('Book saved successfully');
+        console.log(response);
+        // Дополнительные действия после успешного сохранения книги
+      },
+      (error) => {
+        console.error('Error saving book', error);
+        // Обработка ошибки
+      },
+    );
   }
 }
