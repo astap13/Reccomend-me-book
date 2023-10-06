@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { BookService } from 'src/app/services/book-service/book-save.service';
+import { forkJoin } from 'rxjs';
+import { BookService } from 'src/app/services/book-service/book.service';
 
 @Component({
   selector: 'app-bookshelf',
@@ -18,30 +19,30 @@ export class BookshelfComponent implements OnInit {
     this.getSavedBooksID();
   }
 
-  // Сохранение книги
-  saveBook(bookId: string) {
-    this.bookService.saveBook(bookId).subscribe(
-      (response) => {
-        console.log('Book saved successfully', response);
-      },
-      (error) => {
-        console.error('Error saving book', error);
-      },
-    );
-  }
-
   // Пример метода для получения списка сохраненных книг
   getSavedBooksID() {
     this.bookService.getSavedBooks().subscribe(
-      (response) => {
-        response.body as any[];
-        this.savedBooksID = response.body as any[];
-        console.log('Saved books:', this.savedBooksID);
-        // Дополнительные действия после получения списка
+      (response: any) => {
+        if (response) {
+          this.savedBooksID = response.body.savedBooks;
+          const bookObservables = this.savedBooksID.map((bookId) =>
+            this.bookService.getBookById(bookId),
+          );
+
+          forkJoin(bookObservables).subscribe(
+            (books: any[]) => {
+              this.savedBooks = books;
+            },
+            (error) => {
+              console.error('Error fetching saved books', error);
+            },
+          );
+        } else {
+          console.log('No saved books found in the response.');
+        }
       },
       (error) => {
         console.error('Error fetching saved books', error);
-        // Обработка ошибки
       },
     );
   }

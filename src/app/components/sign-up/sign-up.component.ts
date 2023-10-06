@@ -6,7 +6,7 @@ import { LoginServiceService } from 'src/app/services/login-service/login-servic
 @Component({
   selector: 'app-register',
   templateUrl: './sign-up.component.html',
-  styleUrls: ['./sign-up.component.css'],
+  styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent {
   errorMessage: string | null = null;

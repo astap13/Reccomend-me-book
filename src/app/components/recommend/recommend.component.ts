@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { BookService } from 'src/app/services/book-service/book-save.service';
+import { BookService } from 'src/app/services/book-service/book.service';
 
 import { fadeInAnimation } from '../../animations/fade-in.animation';
 import { GoogleBooksVolume } from '../../models';
@@ -40,9 +40,9 @@ export class RecommendComponent implements OnInit {
     console.log(bookId);
     this.bookService.saveBook(bookId).subscribe(
       (response) => {
-        console.log('Book saved successfully');
-        console.log(response);
-        // Дополнительные действия после успешного сохранения книги
+        if (response) {
+          console.log('Book saved successfully');
+        }
       },
       (error) => {
         console.error('Error saving book', error);
