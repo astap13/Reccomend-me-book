@@ -12,11 +12,15 @@ export class BookService {
   private apiUrl = 'https://www.googleapis.com/books/v1/volumes';
 
   saveBook(bookId: string) {
-    return this._http.post('http://localhost:3000/save-book', { bookId }, { observe: 'response' });
+    return this._http.post(
+      'https://recommend-me-book-api.onrender.com/save-book',
+      { bookId },
+      { observe: 'response' },
+    );
   }
 
   getSavedBooks() {
-    return this._http.get('http://localhost:3000/saved-books', {
+    return this._http.get('https://recommend-me-book-api.onrender.com/saved-books', {
       observe: 'response',
     });
   }

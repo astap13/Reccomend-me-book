@@ -23,19 +23,23 @@ export class LoginServiceService {
       });
     }
     return this._http.post(
-      'http://localhost:3000/login',
+      'https://recommend-me-book-api.onrender.com/login',
       { uname: userObj.uname, upass: userObj.upass },
       { observe: 'response', headers: this.headerOptions },
     );
   }
 
   setupAuth() {
-    return this._http.post('http://localhost:3000/tfa/setup', {}, { observe: 'response' });
+    return this._http.post(
+      'https://recommend-me-book-api.onrender.com/tfa/setup',
+      {},
+      { observe: 'response' },
+    );
   }
 
   registerUser(userObj: any) {
     return this._http.post(
-      'http://localhost:3000/register',
+      'https://recommend-me-book-api.onrender.com/register',
       { uname: userObj.uname, upass: userObj.upass },
       { observe: 'response' },
     );
@@ -59,14 +63,22 @@ export class LoginServiceService {
   }
 
   getAuth() {
-    return this._http.get('http://localhost:3000/tfa/setup', { observe: 'response' });
+    return this._http.get('https://recommend-me-book-api.onrender.com/tfa/setup', {
+      observe: 'response',
+    });
   }
 
   deleteAuth() {
-    return this._http.delete('http://localhost:3000/tfa/setup', { observe: 'response' });
+    return this._http.delete('https://recommend-me-book-api.onrender.com/tfa/setup', {
+      observe: 'response',
+    });
   }
 
   verifyAuth(token: any) {
-    return this._http.post('http://localhost:3000/tfa/verify', { token }, { observe: 'response' });
+    return this._http.post(
+      'https://recommend-me-book-api.onrender.com/tfa/verify',
+      { token },
+      { observe: 'response' },
+    );
   }
 }
